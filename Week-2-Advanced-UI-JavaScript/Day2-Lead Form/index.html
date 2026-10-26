@@ -1,0 +1,679 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Accessible lead management intake form for DevPreneurs."
+    >
+
+    <title>DevPreneurs | Lead Management System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Skip link for keyboard and screen-reader users -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+
+            <a href="#main-content" class="brand" aria-label="DevPreneurs home">
+                <span class="brand__logo" aria-hidden="true">D</span>
+
+                <span class="brand__text">
+                    <strong>DevPreneurs</strong>
+                    <span>Business Workspace</span>
+                </span>
+            </a>
+
+            <div class="header__right">
+                <span class="header__status">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    Lead Management
+                </span>
+
+                <div class="profile" aria-label="Workspace administrator">
+                    <span class="profile__avatar" aria-hidden="true">A</span>
+                    <span class="profile__name">Administrator</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main container" id="main-content">
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="#main-content">Workspace</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">New Lead</span>
+        </nav>
+
+        <!-- Page Heading -->
+        <section class="page-heading" aria-labelledby="page-title">
+
+            <div class="page-heading__content">
+                <span class="eyebrow">CUSTOMER RELATIONSHIP MANAGEMENT</span>
+
+                <h1 id="page-title">Add New Lead</h1>
+
+                <p>
+                    Capture lead information, understand customer needs,
+                    and plan your next business opportunity.
+                </p>
+            </div>
+
+            <div class="page-heading__badge">
+                <span aria-hidden="true">✦</span>
+                New Contact
+            </div>
+
+        </section>
+
+        <!-- Form Layout -->
+        <div class="form-layout">
+
+            <!-- Main Form -->
+            <section class="form-card" aria-labelledby="form-title">
+
+                <div class="form-card__header">
+                    <div>
+                        <h2 id="form-title">Lead Information</h2>
+                        <p>Complete the details below to register a new lead.</p>
+                    </div>
+
+                    <span class="required-note">
+                        <span aria-hidden="true">*</span> Required fields
+                    </span>
+                </div>
+
+                <form
+                    class="lead-form"
+                    id="lead-form"
+                    action="#form-result"
+                    method="get"
+                >
+
+                    <!-- Section 1: Personal Information -->
+                    <fieldset class="form-section">
+                        <legend>
+                            <span class="section-number" aria-hidden="true">01</span>
+                            Personal Information
+                        </legend>
+
+                        <p class="section-description">
+                            Enter the lead's basic contact details.
+                        </p>
+
+                        <div class="form-grid">
+
+                            <!-- First Name -->
+                            <div class="form-field">
+                                <label for="first-name">
+                                    First Name <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="first-name"
+                                    name="first_name"
+                                    placeholder="e.g. Ahmed"
+                                    autocomplete="given-name"
+                                    minlength="2"
+                                    maxlength="50"
+                                    aria-describedby="first-name-help"
+                                    required
+                                >
+
+                                <small class="field-help" id="first-name-help">
+                                    Enter at least 2 characters.
+                                </small>
+
+                                <span class="field-error">
+                                    Please enter a first name with at least 2 characters.
+                                </span>
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="form-field">
+                                <label for="last-name">
+                                    Last Name <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="last-name"
+                                    name="last_name"
+                                    placeholder="e.g. Khan"
+                                    autocomplete="family-name"
+                                    minlength="2"
+                                    maxlength="50"
+                                    required
+                                >
+
+                                <span class="field-error">
+                                    Please enter a last name with at least 2 characters.
+                                </span>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-field">
+                                <label for="email">
+                                    Email Address <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="name@example.com"
+                                    autocomplete="email"
+                                    maxlength="254"
+                                    aria-describedby="email-help"
+                                    required
+                                >
+
+                                <small class="field-help" id="email-help">
+                                    Use a valid email address.
+                                </small>
+
+                                <span class="field-error">
+                                    Please enter a valid email address.
+                                </span>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="form-field">
+                                <label for="phone">
+                                    Phone Number <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+92 300 1234567"
+                                    autocomplete="tel"
+                                    pattern="[+]?[0-9 ()-]{7,20}"
+                                    aria-describedby="phone-help"
+                                    required
+                                >
+
+                                <small class="field-help" id="phone-help">
+                                    Include your country code if possible.
+                                </small>
+
+                                <span class="field-error">
+                                    Enter a valid phone number using digits,
+                                    spaces, parentheses, hyphens, and an optional plus sign.
+                                </span>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 2: Company Information -->
+                    <fieldset class="form-section">
+                        <legend>
+                            <span class="section-number" aria-hidden="true">02</span>
+                            Company Information
+                        </legend>
+
+                        <p class="section-description">
+                            Tell us about the organization and the lead's role.
+                        </p>
+
+                        <div class="form-grid">
+
+                            <div class="form-field">
+                                <label for="company">
+                                    Company Name <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="company"
+                                    name="company"
+                                    placeholder="e.g. FutureTech Solutions"
+                                    autocomplete="organization"
+                                    maxlength="100"
+                                    required
+                                >
+
+                                <span class="field-error">
+                                    Please enter a company name.
+                                </span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="job-title">Job Title</label>
+
+                                <input
+                                    type="text"
+                                    id="job-title"
+                                    name="job_title"
+                                    placeholder="e.g. Project Manager"
+                                    autocomplete="organization-title"
+                                    maxlength="100"
+                                >
+                            </div>
+
+                            <div class="form-field">
+                                <label for="industry">
+                                    Industry <span class="required">*</span>
+                                </label>
+
+                                <select id="industry" name="industry" required>
+                                    <option value="" selected disabled>
+                                        Select an industry
+                                    </option>
+                                    <option value="technology">Technology / IT</option>
+                                    <option value="education">Education</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="finance">Finance / Banking</option>
+                                    <option value="retail">Retail / E-commerce</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="real-estate">Real Estate</option>
+                                    <option value="consulting">Consulting</option>
+                                    <option value="other">Other</option>
+                                </select>
+
+                                <span class="field-error">
+                                    Please select an industry.
+                                </span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="website">Company Website</label>
+
+                                <input
+                                    type="url"
+                                    id="website"
+                                    name="website"
+                                    placeholder="https://example.com"
+                                    autocomplete="url"
+                                    maxlength="200"
+                                    aria-describedby="website-help"
+                                >
+
+                                <small class="field-help" id="website-help">
+                                    Optional. Include https:// in the URL.
+                                </small>
+
+                                <span class="field-error">
+                                    Please enter a valid website URL.
+                                </span>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 3: Lead Details -->
+                    <fieldset class="form-section">
+                        <legend>
+                            <span class="section-number" aria-hidden="true">03</span>
+                            Lead Details
+                        </legend>
+
+                        <p class="section-description">
+                            Record how the lead found you and what they need.
+                        </p>
+
+                        <div class="form-grid">
+
+                            <div class="form-field">
+                                <label for="lead-source">
+                                    Lead Source <span class="required">*</span>
+                                </label>
+
+                                <select
+                                    id="lead-source"
+                                    name="lead_source"
+                                    required
+                                >
+                                    <option value="" selected disabled>
+                                        Select lead source
+                                    </option>
+                                    <option value="website">Company Website</option>
+                                    <option value="social-media">Social Media</option>
+                                    <option value="referral">Referral</option>
+                                    <option value="email">Email Campaign</option>
+                                    <option value="advertisement">Advertisement</option>
+                                    <option value="event">Event / Conference</option>
+                                    <option value="cold-call">Cold Call</option>
+                                    <option value="other">Other</option>
+                                </select>
+
+                                <span class="field-error">
+                                    Please select where the lead came from.
+                                </span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="service">
+                                    Interested Service <span class="required">*</span>
+                                </label>
+
+                                <select id="service" name="service" required>
+                                    <option value="" selected disabled>
+                                        Select a service
+                                    </option>
+                                    <option value="web-development">
+                                        Web Development
+                                    </option>
+                                    <option value="mobile-development">
+                                        Mobile App Development
+                                    </option>
+                                    <option value="ui-ux-design">
+                                        UI/UX Design
+                                    </option>
+                                    <option value="digital-marketing">
+                                        Digital Marketing
+                                    </option>
+                                    <option value="data-analytics">
+                                        Data Analytics
+                                    </option>
+                                    <option value="consulting">
+                                        IT Consulting
+                                    </option>
+                                    <option value="other">Other</option>
+                                </select>
+
+                                <span class="field-error">
+                                    Please select an interested service.
+                                </span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="budget">Estimated Budget</label>
+
+                                <select id="budget" name="budget">
+                                    <option value="" selected>
+                                        Select budget range
+                                    </option>
+                                    <option value="under-500">
+                                        Under $500
+                                    </option>
+                                    <option value="500-1000">
+                                        $500 – $1,000
+                                    </option>
+                                    <option value="1000-5000">
+                                        $1,000 – $5,000
+                                    </option>
+                                    <option value="5000-10000">
+                                        $5,000 – $10,000
+                                    </option>
+                                    <option value="above-10000">
+                                        Above $10,000
+                                    </option>
+                                    <option value="undecided">Not Decided</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="priority">
+                                    Lead Priority <span class="required">*</span>
+                                </label>
+
+                                <select id="priority" name="priority" required>
+                                    <option value="" selected disabled>
+                                        Select priority
+                                    </option>
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+
+                                <span class="field-error">
+                                    Please select a lead priority.
+                                </span>
+                            </div>
+
+                            <div class="form-field form-field--full">
+                                <label for="lead-notes">
+                                    Requirements and Notes
+                                    <span class="required">*</span>
+                                </label>
+
+                                <textarea
+                                    id="lead-notes"
+                                    name="lead_notes"
+                                    rows="5"
+                                    minlength="10"
+                                    maxlength="1500"
+                                    placeholder="Describe the customer's requirements, goals, challenges, or questions..."
+                                    aria-describedby="notes-help"
+                                    required
+                                ></textarea>
+
+                                <small class="field-help" id="notes-help">
+                                    Provide at least 10 characters. Maximum 1500 characters.
+                                </small>
+
+                                <span class="field-error">
+                                    Please enter at least 10 characters describing the lead's requirements.
+                                </span>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 4: Follow-up -->
+                    <fieldset class="form-section">
+                        <legend>
+                            <span class="section-number" aria-hidden="true">04</span>
+                            Follow-up Planning
+                        </legend>
+
+                        <p class="section-description">
+                            Choose when and how the team should contact this lead.
+                        </p>
+
+                        <div class="form-grid">
+
+                            <div class="form-field">
+                                <label for="follow-up-date">
+                                    Follow-up Date <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="follow-up-date"
+                                    name="follow_up_date"
+                                    required
+                                >
+
+                                <span class="field-error">
+                                    Please choose a follow-up date.
+                                </span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="contact-method">
+                                    Preferred Contact Method
+                                    <span class="required">*</span>
+                                </label>
+
+                                <select
+                                    id="contact-method"
+                                    name="contact_method"
+                                    required
+                                >
+                                    <option value="" selected disabled>
+                                        Select contact method
+                                    </option>
+                                    <option value="email">Email</option>
+                                    <option value="phone">Phone Call</option>
+                                    <option value="video-call">Video Call</option>
+                                    <option value="in-person">In Person</option>
+                                </select>
+
+                                <span class="field-error">
+                                    Please select a contact method.
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="checkbox-field">
+                            <input
+                                type="checkbox"
+                                id="consent"
+                                name="contact_consent"
+                                value="yes"
+                                required
+                                aria-describedby="consent-help"
+                            >
+
+                            <label for="consent">
+                                I confirm that the lead's contact details were
+                                collected appropriately and may be used for the
+                                requested business follow-up.
+                                <span class="required">*</span>
+                            </label>
+                        </div>
+
+                        <small class="field-help checkbox-help" id="consent-help">
+                            Confirmation is required before submitting this form.
+                        </small>
+
+                    </fieldset>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button
+                            class="button button--secondary"
+                            type="reset"
+                        >
+                            Clear Form
+                        </button>
+
+                        <button
+                            class="button button--primary"
+                            type="submit"
+                        >
+                            Save Lead
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+
+                    <p class="form-footnote">
+                        Fields marked with <span class="required">*</span>
+                        are required. Please review your information before saving.
+                    </p>
+
+                </form>
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="sidebar" aria-label="Lead form information">
+
+                <section class="info-card">
+                    <div class="info-card__icon" aria-hidden="true">✦</div>
+
+                    <h2>Lead Intake Guide</h2>
+
+                    <p>
+                        Complete each section carefully to help your team
+                        understand and manage the new opportunity.
+                    </p>
+
+                    <ul class="guide-list">
+                        <li>
+                            <span class="guide-list__check" aria-hidden="true">✓</span>
+                            <span>Verify contact information</span>
+                        </li>
+
+                        <li>
+                            <span class="guide-list__check" aria-hidden="true">✓</span>
+                            <span>Select the correct service</span>
+                        </li>
+
+                        <li>
+                            <span class="guide-list__check" aria-hidden="true">✓</span>
+                            <span>Record customer requirements</span>
+                        </li>
+
+                        <li>
+                            <span class="guide-list__check" aria-hidden="true">✓</span>
+                            <span>Plan the next follow-up</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="tip-card" aria-labelledby="tip-title">
+                    <div class="tip-card__heading">
+                        <span aria-hidden="true">ⓘ</span>
+                        <h2 id="tip-title">Accessibility Tip</h2>
+                    </div>
+
+                    <p>
+                        Every field has a visible label. Use the Tab key
+                        to navigate through the form and look for the
+                        highlighted focus outline.
+                    </p>
+                </section>
+
+                <section class="privacy-card">
+                    <span class="privacy-card__icon" aria-hidden="true">♧</span>
+
+                    <div>
+                        <h2>Handle Data Responsibly</h2>
+                        <p>
+                            Only collect information needed for legitimate
+                            business communication.
+                        </p>
+                    </div>
+                </section>
+
+            </aside>
+
+        </div>
+
+        <!-- Demo submission destination -->
+        <p id="form-result" class="form-result">
+            The demo form was submitted using the browser's default form
+            behavior. A real lead-management system needs a backend to
+            validate and store submitted leads.
+        </p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <a href="#main-content" class="footer__brand">
+                <span class="brand__logo" aria-hidden="true">D</span>
+                <span>DevPreneurs</span>
+            </a>
+
+            <p>© 2026 DevPreneurs. Lead Management Workspace.</p>
+
+            <a href="#main-content" class="footer__back">
+                Back to top ↑
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>

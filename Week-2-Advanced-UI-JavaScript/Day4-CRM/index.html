@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive DevPreneurs CRM Dashboard">
+    <title>DevPreneurs | CRM Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- Mobile sidebar toggle -->
+        <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+
+        <label for="sidebar-toggle" class="sidebar-overlay"
+               aria-label="Close navigation menu"></label>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar__brand">
+                <div class="sidebar__logo">D</div>
+                <div>
+                    <h2 class="sidebar__brand-name">DevPreneurs</h2>
+                    <p class="sidebar__brand-subtitle">Business Workspace</p>
+                </div>
+                <label for="sidebar-toggle" class="sidebar__close"
+                       aria-label="Close menu">&times;</label>
+            </div>
+
+            <div class="sidebar__workspace">
+                <span class="workspace__icon">D</span>
+                <div>
+                    <h3>DevPreneurs Inc.</h3>
+                    <p>Free Plan</p>
+                </div>
+                <span class="workspace__arrow">⌄</span>
+            </div>
+
+            <nav class="sidebar__nav" aria-label="Main navigation">
+                <p class="sidebar__heading">WORKSPACE</p>
+
+                <a href="#dashboard" class="nav-link nav-link--active">
+                    <span class="nav-link__icon">▦</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#leads" class="nav-link">
+                    <span class="nav-link__icon">♙</span>
+                    <span>Leads</span>
+                    <span class="nav-link__badge">12</span>
+                </a>
+
+                <a href="#customers" class="nav-link">
+                    <span class="nav-link__icon">♧</span>
+                    <span>Customers</span>
+                </a>
+
+                <a href="#deals" class="nav-link">
+                    <span class="nav-link__icon">◇</span>
+                    <span>Deals</span>
+                </a>
+
+                <a href="#tasks" class="nav-link">
+                    <span class="nav-link__icon">☑</span>
+                    <span>Tasks</span>
+                </a>
+
+                <p class="sidebar__heading sidebar__heading--spaced">
+                    MANAGEMENT
+                </p>
+
+                <a href="#reports" class="nav-link">
+                    <span class="nav-link__icon">▥</span>
+                    <span>Reports</span>
+                </a>
+
+                <a href="#calendar" class="nav-link">
+                    <span class="nav-link__icon">▦</span>
+                    <span>Calendar</span>
+                </a>
+
+                <a href="#settings" class="nav-link">
+                    <span class="nav-link__icon">⚙</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar__bottom">
+                <div class="help-card">
+                    <div class="help-card__icon">?</div>
+                    <h3>Need help?</h3>
+                    <p>Visit our help center to learn more.</p>
+                    <a href="#help">Visit Help Center →</a>
+                </div>
+
+                <div class="sidebar__user">
+                    <div class="avatar avatar--purple">SA</div>
+                    <div class="sidebar__user-info">
+                        <h4>Zara Khan</h4>
+                        <p>Administrator</p>
+                    </div>
+                    <span class="sidebar__user-menu">•••</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main application area -->
+        <div class="dashboard__main">
+
+            <!-- Top header -->
+            <header class="topbar">
+                <div class="topbar__left">
+                    <label for="sidebar-toggle" class="topbar__menu"
+                           aria-label="Open navigation menu">☰</label>
+
+                    <div class="breadcrumb">
+                        <span>Workspace</span>
+                        <span class="breadcrumb__separator">/</span>
+                        <strong>Dashboard</strong>
+                    </div>
+                </div>
+
+                <div class="topbar__right">
+                    <form class="topbar__search" role="search"
+                          action="#dashboard">
+                        <label for="dashboard-search" class="visually-hidden">
+                            Search dashboard
+                        </label>
+                        <span aria-hidden="true">⌕</span>
+                        <input type="search" id="dashboard-search"
+                               placeholder="Search anything...">
+                        <kbd>Ctrl K</kbd>
+                    </form>
+
+                    <button class="topbar__icon-button"
+                            type="button" aria-label="Notifications">
+                        ♧
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="topbar__profile">
+                        <div class="avatar avatar--purple">ZK</div>
+                        <div class="topbar__profile-info">
+                            <h4>Zara Khan</h4>
+                            <p>Admin</p>
+                        </div>
+                        <span class="topbar__profile-arrow">⌄</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard content -->
+            <main class="content" id="dashboard">
+
+                <section class="welcome">
+                    <div>
+                        <p class="welcome__eyebrow">OVERVIEW</p>
+                        <h1>Welcome back, Zara! 👋</h1>
+                        <p class="welcome__description">
+                            Here's what's happening with your business today.
+                        </p>
+                    </div>
+
+                    <div class="welcome__actions">
+                        <button class="button button--secondary"
+                                type="button"
+                                onclick="window.print()">
+                            ↓ Export
+                        </button>
+                        <a href="#leads" class="button button--primary">
+                            <span aria-hidden="true">+</span> Add New Lead
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Statistic cards -->
+                <section class="metrics" aria-label="Business statistics">
+
+                    <article class="metric-card">
+                        <div class="metric-card__top">
+                            <div class="metric-card__icon metric-card__icon--blue">
+                                ♙
+                            </div>
+                            <span class="metric-card__trend metric-card__trend--up">
+                                ↗ 12.8%
+                            </span>
+                        </div>
+                        <p class="metric-card__label">Total Leads</p>
+                        <h2 class="metric-card__value">2,450</h2>
+                        <p class="metric-card__comparison">
+                            <strong>+180</strong> compared to last month
+                        </p>
+                    </article>
+
+                    <article class="metric-card">
+                        <div class="metric-card__top">
+                            <div class="metric-card__icon metric-card__icon--green">
+                                ♧
+                            </div>
+                            <span class="metric-card__trend metric-card__trend--up">
+                                ↗ 8.2%
+                            </span>
+                        </div>
+                        <p class="metric-card__label">Total Customers</p>
+                        <h2 class="metric-card__value">1,240</h2>
+                        <p class="metric-card__comparison">
+                            <strong>+95</strong> compared to last month
+                        </p>
+                    </article>
+
+                    <article class="metric-card">
+                        <div class="metric-card__top">
+                            <div class="metric-card__icon metric-card__icon--orange">
+                                ◈
+                            </div>
+                            <span class="metric-card__trend metric-card__trend--up">
+                                ↗ 15.4%
+                            </span>
+                        </div>
+                        <p class="metric-card__label">Total Revenue</p>
+                        <h2 class="metric-card__value">$48,250</h2>
+                        <p class="metric-card__comparison">
+                            <strong>+$6,250</strong> compared to last month
+                        </p>
+                    </article>
+
+                    <article class="metric-card">
+                        <div class="metric-card__top">
+                            <div class="metric-card__icon metric-card__icon--pink">
+                                ◷
+                            </div>
+                            <span class="metric-card__trend metric-card__trend--down">
+                                ↘ 2.4%
+                            </span>
+                        </div>
+                        <p class="metric-card__label">Conversion Rate</p>
+                        <h2 class="metric-card__value">24.8%</h2>
+                        <p class="metric-card__comparison">
+                            <strong>−0.6%</strong> compared to last month
+                        </p>
+                    </article>
+
+                </section>
+
+                <!-- Charts and task summary -->
+                <section class="overview-grid" aria-label="Business overview">
+
+                    <article class="panel revenue-panel">
+                        <div class="panel__header">
+                            <div>
+                                <h2>Revenue Overview</h2>
+                                <p>Track your revenue performance over time.</p>
+                            </div>
+                            <select aria-label="Revenue period" class="select-control">
+                                <option>This Week</option>
+                                <option>This Month</option>
+                                <option>This Year</option>
+                            </select>
+                        </div>
+
+                        <div class="revenue-summary">
+                            <h3>$24,680 <span>↗ 14.5%</span></h3>
+                            <p>Total revenue this week</p>
+                        </div>
+
+                        <div class="chart" role="img"
+                             aria-label="Bar chart showing revenue from Monday to Sunday">
+                            <div class="chart__y-axis">
+                                <span>$8k</span>
+                                <span>$6k</span>
+                                <span>$4k</span>
+                                <span>$2k</span>
+                                <span>$0</span>
+                            </div>
+
+                            <div class="chart__plot">
+                                <div class="chart__gridlines">
+                                    <span></span><span></span><span></span>
+                                    <span></span><span></span>
+                                </div>
+
+                                <div class="bar-chart">
+                                    <div class="bar-chart__item">
+                                        <div class="bar-chart__bar" style="--bar-height: 38%"></div>
+                                        <span>Mon</span>
+                                    </div>
+                                    <div class="bar-chart__item">
+                                        <div class="bar-chart__bar" style="--bar-height: 56%"></div>
+                                        <span>Tue</span>
+                                    </div>
+                                    <div class="bar-chart__item">
+                                        <div class="bar-chart__bar" style="--bar-height: 48%"></div>
+                                        <span>Wed</span>
+                                    </div>
+                                    <div class="bar-chart__item">
+                                        <div class="bar-chart__bar" style="--bar-height: 70%"></div>
+                                        <span>Thu</span>
+                                    </div>
+                                    <div class="bar-chart__item">
+                                        <div class="bar-chart__bar" style="--bar-height: 62%"></div>
+                                        <span>Fri</span>
+                                    </div>
+                                    <div class="bar-chart__item">
+                                        <div class="bar-chart__bar" style="--bar-height: 84%"></div>
+                                        <span>Sat</span>
+                                    </div>
+                                    <div class="bar-chart__item">
+                                        <div class="bar-chart__bar bar-chart__bar--highlight"
+                                             style="--bar-height: 96%"></div>
+                                        <span>Sun</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="panel tasks-panel" id="tasks">
+                        <div class="panel__header">
+                            <div>
+                                <h2>Tasks Overview</h2>
+                                <p>Your task progress this week.</p>
+                            </div>
+                            <button class="icon-button" type="button"
+                                    aria-label="More task options">•••</button>
+                        </div>
+
+                        <div class="task-progress">
+                            <div class="task-progress__circle">
+                                <div class="task-progress__inner">
+                                    <strong>75%</strong>
+                                    <span>Completed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="task-legend">
+                            <div class="task-legend__item">
+                                <span class="task-legend__dot task-legend__dot--blue"></span>
+                                <span>Completed</span>
+                                <strong>24</strong>
+                            </div>
+                            <div class="task-legend__item">
+                                <span class="task-legend__dot task-legend__dot--orange"></span>
+                                <span>In Progress</span>
+                                <strong>8</strong>
+                            </div>
+                            <div class="task-legend__item">
+                                <span class="task-legend__dot task-legend__dot--gray"></span>
+                                <span>Pending</span>
+                                <strong>6</strong>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Recent activity table -->
+                <section class="panel activity-panel" id="leads">
+                    <div class="panel__header activity-panel__header">
+                        <div>
+                            <h2>Recent Activity</h2>
+                            <p>Keep track of your latest leads and customer updates.</p>
+                        </div>
+                        <a href="#all-activities" class="text-link">
+                            View all activities →
+                        </a>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="activity-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">CONTACT</th>
+                                    <th scope="col">COMPANY</th>
+                                    <th scope="col">DATE</th>
+                                    <th scope="col">STATUS</th>
+                                    <th scope="col">VALUE</th>
+                                    <th scope="col">ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="contact">
+                                            <div class="avatar avatar--blue">JD</div>
+                                            <div>
+                                                <strong>John Davidson</strong>
+                                                <span>john@example.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>TechNova Inc.</td>
+                                    <td>Oct 21, 2026</td>
+                                    <td><span class="status status--green">Converted</span></td>
+                                    <td class="table-value">$4,500</td>
+                                    <td><button class="row-action" type="button"
+                                                aria-label="More actions for John Davidson">•••</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="contact">
+                                            <div class="avatar avatar--pink">EW</div>
+                                            <div>
+                                                <strong>Emily Wilson</strong>
+                                                <span>emily@example.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Bright Solutions</td>
+                                    <td>Oct 20, 2026</td>
+                                    <td><span class="status status--blue">In Progress</span></td>
+                                    <td class="table-value">$2,800</td>
+                                    <td><button class="row-action" type="button"
+                                                aria-label="More actions for Emily Wilson">•••</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="contact">
+                                            <div class="avatar avatar--orange">MB</div>
+                                            <div>
+                                                <strong>Michael Brown</strong>
+                                                <span>michael@example.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>PixelCraft Studio</td>
+                                    <td>Oct 19, 2026</td>
+                                    <td><span class="status status--orange">Pending</span></td>
+                                    <td class="table-value">$1,950</td>
+                                    <td><button class="row-action" type="button"
+                                                aria-label="More actions for Michael Brown">•••</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="contact">
+                                            <div class="avatar avatar--green">SJ</div>
+                                            <div>
+                                                <strong>Sarah Johnson</strong>
+                                                <span>sarah@example.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>CloudBase Ltd.</td>
+                                    <td>Oct 18, 2026</td>
+                                    <td><span class="status status--green">Converted</span></td>
+                                    <td class="table-value">$5,200</td>
+                                    <td><button class="row-action" type="button"
+                                                aria-label="More actions for Sarah Johnson">•••</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="contact">
+                                            <div class="avatar avatar--purple">RL</div>
+                                            <div>
+                                                <strong>Robert Lee</strong>
+                                                <span>robert@example.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>NextGen Systems</td>
+                                    <td>Oct 17, 2026</td>
+                                    <td><span class="status status--blue">In Progress</span></td>
+                                    <td class="table-value">$3,100</td>
+                                    <td><button class="row-action" type="button"
+                                                aria-label="More actions for Robert Lee">•••</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-footer">
+                        <p>Showing <strong>5</strong> of <strong>24</strong> activities</p>
+                        <div class="pagination">
+                            <button type="button" disabled aria-label="Previous page">←</button>
+                            <button type="button" class="pagination__active"
+                                    aria-current="page">1</button>
+                            <button type="button">2</button>
+                            <button type="button">3</button>
+                            <button type="button" aria-label="Next page">→</button>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="footer">
+                    <p>© 2026 DevPreneurs. All rights reserved.</p>
+                    <p>Made for better business management.</p>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>
